@@ -7,11 +7,12 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    MoneyAdd MA;
-    Shop shop;
+    public MoneyAdd MA;
+    public Shop shop;
     public float moneyGained;
     public float moneySpent;
     public float moneyTotal;
+
     void Update()
     {
         moneyGained = MA.moneyTotal;
