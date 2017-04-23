@@ -1,0 +1,4 @@
+sceneSetups:
+- path: Assets/Maksim/Scenes/MaksTests.unity
+  isLoaded: 1
+  isActive: 1
