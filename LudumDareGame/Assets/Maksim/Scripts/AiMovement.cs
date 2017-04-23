@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class AiMovement : MonoBehaviour {
-    float currentXAxisMove = 0;
-    float currentYAxisMove = 0;
-    float currentZAxisMove = 0;
-    float currentZAxisRotate = 0;
+    public float currentXAxisMove = 0;
+    public float currentYAxisMove = 0;
+    public float currentZAxisMove = 0;
+    public float currentZAxisRotate = 0;
 
     float nextXAxisMove = 0;
     float nextYAxisMove = 0;
@@ -32,7 +32,7 @@ public class AiMovement : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    public void FixedUpdate()
     {
         if (allowMovement)
         {

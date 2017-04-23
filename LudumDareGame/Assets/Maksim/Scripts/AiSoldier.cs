@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AiSoldier : MonoBehaviour {
-    
+public class AiSoldier : MonoBehaviour
+{
+
     string myColorType;
     public bool isFighting;
     Vector3 enemyLocation = new Vector3(0, 0, 0);
@@ -15,30 +16,33 @@ public class AiSoldier : MonoBehaviour {
     AiMovement myMovement;
     Vector3 dirVect;
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         myColorType = gameObject.tag;
         myMovement = transform.parent.gameObject.GetComponent<AiMovement>();
         bullet = (GameObject)Resources.Load("Bullet");
-	}
-	
-	// Update is called once per frame
-	void Update () {
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
         if (isFighting)
         {
             timePassed += Time.deltaTime;
-            if(timePassed > bulletTimeLimit)
+            if (timePassed > bulletTimeLimit)
             {
                 dirVect = (enemyLocation - transform.position).normalized;
                 newBullet = Instantiate(bullet, transform.position, Quaternion.identity);
                 bulletMovement = newBullet.GetComponent<BulletMovement>();
                 bulletMovement.xMove = Random.Range(dirVect.x - 0.001f, dirVect.x + 0.001f) * 0.01f;
                 bulletMovement.yMove = Random.Range(dirVect.y - 0.001f, dirVect.y + 0.001f) * 0.01f;
+                bulletMovement.shooterId = transform.parent.gameObject.GetInstanceID();
                 timePassed = 0;
                 isFighting = false;
                 myMovement.allowMovement = true;
             }
         }
-	}
+    }
     void OnTriggerEnter(Collider c)
     {
         if (myColorType != c.gameObject.tag)
