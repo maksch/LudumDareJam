@@ -20,7 +20,7 @@ public class AiMovement : MonoBehaviour {
     bool startCurrentNewDirection = true;
     bool startNextNewDirection;
     Vector3 pointSelected;
-    float magnifier = 0.03f;
+    float magnifier = 0.09f;
 
     public bool allowMovement = true;
 

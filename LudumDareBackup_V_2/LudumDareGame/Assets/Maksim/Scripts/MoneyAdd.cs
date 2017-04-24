@@ -11,7 +11,7 @@ public class MoneyAdd : MonoBehaviour
 {
 
     public int moneyTotal;
-    public Text moneyText;
+    //public Text moneyText;
     public int totalPlayers;
     public int newPlayerCount;
     public float timePassed;
@@ -23,7 +23,7 @@ public class MoneyAdd : MonoBehaviour
     void Start()
     {
         moneyTotal = 0;
-        moneyText.text = "COINS: " + moneyTotal.ToString();
+        //moneyText.text = "COINS: " + moneyTotal.ToString();
         moneyTC = gameObject.GetComponent<TeamCounter>();
         if (moneyTC != null)
         {
@@ -132,7 +132,7 @@ public class MoneyAdd : MonoBehaviour
 
         if (timePassed >= 2)
         {
-
+            moneyTC = gameObject.GetComponent<TeamCounter>();
             newPlayerCount = moneyTC.totalRed + moneyTC.totalBlue + moneyTC.totalGreen;
 
             if (newPlayerCount < totalPlayers)
@@ -143,7 +143,7 @@ public class MoneyAdd : MonoBehaviour
             moneyTotal += 2;
             timePassed = 0;
 
-            moneyText.text = "COINS: " + moneyTotal.ToString();
+            //moneyText.text = "COINS: " + moneyTotal.ToString();
         }
 
 

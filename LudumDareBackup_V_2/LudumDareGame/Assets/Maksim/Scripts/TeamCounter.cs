@@ -12,7 +12,8 @@ public class TeamCounter : MonoBehaviour
     public int totalGreen;
 
     float timePassed;
-    void Start() {
+    void Start()
+    {
         totalRed = GameObject.FindGameObjectsWithTag("RedPlayer").Length;
         totalBlue = GameObject.FindGameObjectsWithTag("BluePlayer").Length;
         totalGreen = GameObject.FindGameObjectsWithTag("GreenPlayer").Length;
@@ -21,14 +22,23 @@ public class TeamCounter : MonoBehaviour
     public void Update()
     {
         timePassed += Time.deltaTime;
-        if (timePassed > 2)
+        if (timePassed > 1)
         {
-            timePassed = 0;
+            if (timePassed > 3)
+            {
+                totalBlue = GameObject.FindGameObjectsWithTag("BluePlayer").Length;
+                timePassed = 0;
+            }
+            else if (timePassed > 2)
+            {
+                totalGreen = GameObject.FindGameObjectsWithTag("GreenPlayer").Length;
 
-            totalRed = GameObject.FindGameObjectsWithTag("RedPlayer").Length;
-            totalBlue = GameObject.FindGameObjectsWithTag("BluePlayer").Length;
-            totalGreen = GameObject.FindGameObjectsWithTag("GreenPlayer").Length;
-            print("checked");
+            }
+            else if (timePassed > 1)
+            {
+                totalRed = GameObject.FindGameObjectsWithTag("RedPlayer").Length;
+
+            }
         }
     }
 }
