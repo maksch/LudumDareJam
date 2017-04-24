@@ -89,11 +89,13 @@
   <ItemGroup>
     <Compile Include="Assets\Maksim\Scripts\AiMovement.cs" />
     <Compile Include="Assets\Maksim\Scripts\AiSoldier.cs" />
+    <Compile Include="Assets\Maksim\Scripts\BulletDamage.cs" />
     <Compile Include="Assets\Maksim\Scripts\BulletMovement.cs" />
     <Compile Include="Assets\Maksim\Scripts\CameraMove.cs" />
     <Compile Include="Assets\Maksim\Scripts\Drag.cs" />
     <Compile Include="Assets\Maksim\Scripts\FollowPosition.cs" />
     <Compile Include="Assets\Maksim\Scripts\KillAfter.cs" />
+    <Compile Include="Assets\Maksim\Scripts\SoldierStats.cs" />
     <Compile Include="Assets\Maksim\Scripts\TeleportLimits.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
