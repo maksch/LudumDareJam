@@ -1,0 +1,4 @@
+sceneSetups:
+- path: Assets/Maksim/Scenes/Map2.unity
+  isLoaded: 1
+  isActive: 1
